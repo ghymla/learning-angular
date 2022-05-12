@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MANGAS } from './mangas-list';
 
 @Component({
   selector: 'app-mangas',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mangas.component.scss']
 })
 export class MangasComponent implements OnInit {
+  mangas = MANGAS
 
   constructor() { }
 
