@@ -1,8 +1,9 @@
 <p>ceci est la section film</p>
 <div class="flex-row">
   <div *ngFor="let film of films">
-    <div>
+    <div class="card flex-colum">
       <strong>{{ film.name }}</strong>
+      <img src="../assets/images/deadpool.jpg" alt="une affiche" class="vignette"/>
     </div>
   </div>
 </div>
