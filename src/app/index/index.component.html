@@ -1,9 +1,9 @@
 <input
   type="text"
   #recup
-  (keyup)="recupInput(recup.value)"
+  (keyup)="mangaSelect(recup.value)"
   />
-<p>vous avez écrit: {{ recup.value }}</p>
+<p>résultat de la recherche des mangas: {{ selectManga?.name }}</p>
 
 <select name="" id="">
   <option value="">recherche 1</option>
