@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MANGAS } from './mangas-list';
+import { Manga } from './manga'
+
 
 @Component({
   selector: 'app-mangas',
@@ -7,11 +9,16 @@ import { MANGAS } from './mangas-list';
   styleUrls: ['./mangas.component.scss']
 })
 export class MangasComponent implements OnInit {
-  mangas = MANGAS
+  mangas = MANGAS;
+
 
   constructor() { }
 
   ngOnInit(): void {
+    this.selectManga(this.mangas[0])
   }
 
+  selectManga(manga: Manga){
+    console.log(`voici l'objet manga: ${manga.name}`)
+  }
 }

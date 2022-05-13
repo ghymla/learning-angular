@@ -12,4 +12,7 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  recupInput(value: string){
+    console.log(`la valeur du INPUT ici: ${value}`)
+  }
 }

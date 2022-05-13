@@ -1,4 +1,9 @@
-<input type="text" >
+<input
+  type="text"
+  #recup
+  (keyup)="recupInput(recup.value)"
+  />
+<p>vous avez écrit: {{ recup.value }}</p>
 
 <select name="" id="">
   <option value="">recherche 1</option>

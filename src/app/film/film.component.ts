@@ -14,4 +14,9 @@ export class FilmComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  actionClick(event: MouseEvent){
+    console.log("tu viens de click sur un film")
+    console.log(event.target)
+  }
+
 }
