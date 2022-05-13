@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+.flex-colum {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.border-top {
+  border-top: 1px solid grey;
+}
+
+.border-bot {
+  border-bottom: 1px solid grey;
+}
+
+.s-card {
+  width: 100%;
+  height: 20%;
+  margin-top: 50px;
+}
+
+.container {
+  width: 70%;
+}

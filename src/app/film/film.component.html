@@ -1,4 +1,8 @@
 <p>ceci est la section film</p>
-<div *ngFor="let film of films">
-  <strong>{{ film.name }}</strong>
+<div class="flex-row">
+  <div *ngFor="let film of films">
+    <div>
+      <strong>{{ film.name }}</strong>
+    </div>
+  </div>
 </div>
