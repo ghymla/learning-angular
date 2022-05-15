@@ -1,9 +1,14 @@
 <input
   type="text"
   #recup
-  (keyup)="mangaSelect(recup.value)"
-  />
-<p>résultat de la recherche des mangas: {{ selectManga?.name }}</p>
+  (keyup.enter)="mangaSelect(recup.value)"
+/>
+<div *ngIf="selectManga">
+  <p>résultat de la recherche des mangas: {{ selectManga?.name }}</p>
+</div>
+<div *ngIf="!selectManga">
+  <p> pas de résultat pour le moment ...</p>
+</div>
 
 <select name="" id="">
   <option value="">recherche 1</option>

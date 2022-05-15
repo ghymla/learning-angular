@@ -17,7 +17,7 @@ export class IndexComponent implements OnInit {
   }
 
   mangaSelect(value: string){
-    const manga: Manga|undefined = this.mangaList.find(Manga => Manga.name === value);
+    const manga: Manga|undefined = this.mangaList.find(Manga => Manga.name.toLowerCase() === value.toLowerCase());
     this.selectManga = manga;
   }
 }
