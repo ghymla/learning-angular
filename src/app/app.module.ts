@@ -7,6 +7,7 @@ import { IndexComponent } from './index/index.component';
 import { FilmComponent } from './film/film.component';
 import { SeriesComponent } from './series/series.component';
 import { MangasComponent } from './mangas/mangas.component';
+import { BorderCardDirective } from './border-card.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MangasComponent } from './mangas/mangas.component';
     IndexComponent,
     FilmComponent,
     SeriesComponent,
-    MangasComponent
+    MangasComponent,
+    BorderCardDirective
   ],
   imports: [
     BrowserModule,

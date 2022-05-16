@@ -1,9 +1,12 @@
 <p>Mangas !!</p>
 <div class="flex-row">
   <div *ngFor="let manga of mangas">
-    <div class="card flex-colum">
-      <strong>{{ manga.name }}</strong>
+    <div class="card flex-row">
       <img src="../assets/images/avatar.webp" alt="une affiche" class="vignette">
+      <div class="content">
+        <strong>{{ manga.name }}</strong>
+        <p>{{ manga.description }}</p>
+      </div>
     </div>
   </div>
 </div>

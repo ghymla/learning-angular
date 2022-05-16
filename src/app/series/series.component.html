@@ -1,9 +1,12 @@
 <p>series !!</p>
 <div class="flex-row">
   <div *ngFor="let serie of series">
-    <div class="card flex-colum">
-      <strong>{{ serie.name }}</strong>
+    <div class="card flex-row">
       <img src="../assets/images/witcher.jpg" alt="une affiche" class="vignette">
+      <div class="content">
+        <strong>{{ serie.name }}</strong>
+        <p> {{ serie.description }}</p>
+      </div>
     </div>
   </div>
 </div>
