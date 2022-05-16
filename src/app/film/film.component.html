@@ -1,7 +1,7 @@
 <p>ceci est la section film</p>
 <div class="flex-row">
   <div *ngFor="let film of films">
-    <div class="card flex-row" (click)="actionClick($event)" appBorderCard>
+    <div class="card flex-row" (click)="actionClick($event)" appBorderCard="grey">
       <img src="../assets/images/deadpool.jpg" alt="une affiche" class="vignette"/>
       <div class="content">
         <strong>{{ film.name }}</strong>
