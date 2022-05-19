@@ -21,7 +21,11 @@ export class FilmComponent implements OnInit {
     console.log(event.target)
   }
 
+  // creation d'un envoi sur ma page de film
+  // utilisation de la méthod Router donc a
+  // appeller dans le constructeur
   goToFilm(film: Film) {
+    // équivaut a taper l'url /show-film/:id
     this.router.navigate(["show-film", film.id])
   }
 }
