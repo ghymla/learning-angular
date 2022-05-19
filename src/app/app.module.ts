@@ -9,6 +9,7 @@ import { SeriesComponent } from './series/series.component';
 import { MangasComponent } from './mangas/mangas.component';
 import { BorderCardDirective } from './border-card.directive';
 import { ShowFilmComponent } from './show-film/show-film.component';
+import { PageNoFoundComponent } from './page-no-found/page-no-found.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ShowFilmComponent } from './show-film/show-film.component';
     SeriesComponent,
     MangasComponent,
     BorderCardDirective,
-    ShowFilmComponent
+    ShowFilmComponent,
+    PageNoFoundComponent
   ],
   imports: [
     BrowserModule,
