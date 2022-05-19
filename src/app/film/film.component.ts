@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FILMS } from './films-list';
-
+import { Film } from "./film";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { FILMS } from './films-list';
 export class FilmComponent implements OnInit {
   films = FILMS         // je prend ma liste de films
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 
@@ -20,4 +21,7 @@ export class FilmComponent implements OnInit {
     console.log(event.target)
   }
 
+  goToFilm(film: Film) {
+    this.router.navigate(["show-film", film.id])
+  }
 }
