@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MANGAS } from '../les-mangas/mangas/mangas-list'
+import { MangaService } from '../les-mangas/manga.service';
 import { Manga } from '../les-mangas/mangas/manga';
 
 @Component({
@@ -8,16 +8,16 @@ import { Manga } from '../les-mangas/mangas/manga';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  mangaList: Manga[] = MANGAS;
+  mangaList: Manga [];
   selectManga: Manga|undefined;
 
-  constructor() { }
+  constructor(private mangaSerice: MangaService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.mangaList = this.mangaSerice.getMangas()
   }
 
   mangaSelect(value: string){
-    const manga: Manga|undefined = this.mangaList.find(Manga => Manga.name.toLowerCase() === value.toLowerCase());
-    this.selectManga = manga;
+    this.selectManga = this.mangaSerice.getMangaByName(value.toLowerCase());
   }
 }

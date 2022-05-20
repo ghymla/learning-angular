@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MANGAS } from './mangas-list';
 import { Manga } from './manga'
+import { MangaService } from '../manga.service';
 
 
 @Component({
@@ -9,13 +9,13 @@ import { Manga } from './manga'
   styleUrls: ['./mangas.component.scss']
 })
 export class MangasComponent implements OnInit {
-  mangas = MANGAS;
+  mangas: Manga [];
 
+  constructor(private mangaService: MangaService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.selectManga(this.mangas[0])
+  ngOnInit() {
+    this.mangaService.getMangaByName(Manga.name);
+    this.mangas = this.mangaService.getMangas();
   }
 
   selectManga(manga: Manga){

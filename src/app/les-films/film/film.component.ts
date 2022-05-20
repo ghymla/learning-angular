@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FILMS } from './films-list';
 import { Film } from "./film";
 import { Router } from '@angular/router';
+import { FilmService } from '../film.service';
+
 
 
 @Component({
@@ -10,12 +11,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./film.component.scss']
 })
 export class FilmComponent implements OnInit {
-  films = FILMS         // je prend ma liste de films
+  films: Film [];
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private filmService: FilmService
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.films = this.filmService.getfilms();
+  }
 
+  // petit event clasique pour montrer le fonctionnement
   actionClick(event: MouseEvent){
     console.log("tu viens de click sur un film")
     console.log(event.target)
