@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MANGAS } from '../mangas/mangas-list'
-import { Manga } from '../mangas/manga';
+import { MANGAS } from '../les-mangas/mangas/mangas-list'
+import { Manga } from '../les-mangas/mangas/manga';
 
 @Component({
   selector: 'app-index',
