@@ -31,6 +31,6 @@ export class ShowFilmComponent implements OnInit {
   }
 
   editFilm(film: Film){
-    this.router.navigate(["show-film", film.id, "edit"])
+    this.router.navigate(["edit-film", film.id])
   }
 }

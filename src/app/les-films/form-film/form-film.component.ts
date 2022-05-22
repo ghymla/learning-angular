@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Film } from '../film/film';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FilmService } from '../film.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -10,31 +10,19 @@ import { FilmService } from '../film.service';
   templateUrl: './form-film.component.html',
   styleUrls: ['./form-film.component.scss']
 })
-export class FormFilmComponent implements OnInit {
-  @Input() film: Film;
-  filmUnique: Film|undefined;
+export class FormFilmComponent  {
+  @Input() film: Film|undefined;
+
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private filmService: FilmService
+    private router: Router
   ) { }
-
-  ngOnInit(){
-    const filmId: string|null = this.route.snapshot.paramMap.get('id')
-
-    // si j'ai quelque chose j'injecte dans mon model l'id
-    // je récup mon service pour choper l'id
-    if (filmId) {
-      this.filmUnique = this.filmService.getShowFilm(+filmId);
-    }
-  }
 
   onSubmit(filmForm: NgForm) {
     console.log(filmForm.value);  // { first: '', last: '' }
     console.log(filmForm.valid);  // false
-    if (this.filmUnique){
-      this.router.navigate(["show-film", this.filmUnique.id])
+    if (this.film){
+      this.router.navigate(["show-film", this.film.id])
     }
 
   }

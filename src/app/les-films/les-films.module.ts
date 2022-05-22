@@ -4,19 +4,21 @@ import { ShowFilmComponent } from './show-film/show-film.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormFilmComponent } from './form-film/form-film.component';
 import { FormsModule } from '@angular/forms';
+import { EditFilmComponent } from './edit-film/edit-film.component';
 
 
 
 
 const filmRoute: Routes = [
   {path: 'show-film/:id', component: ShowFilmComponent},
-  {path: 'show-film/:id/edit', component: FormFilmComponent},
+  {path: 'edit-film/:id', component: EditFilmComponent},
 ]
 
 @NgModule({
   declarations: [
     ShowFilmComponent,
-    FormFilmComponent
+    FormFilmComponent,
+    EditFilmComponent
   ],
   imports: [
     CommonModule,

@@ -1,40 +1,49 @@
 <div class="container">
  <p> salut je suis bien ici mais j'ai pas de film</p>
-  <form *ngIf="filmUnique"  class="" (ngSubmit)="onSubmit(filmForm)" #filmForm="ngForm">
+  <form *ngIf="film"  class="" (ngSubmit)="onSubmit(filmForm)" #filmForm="ngForm">
 
     <!-- demande le nom du film -->
     <div class="">
       <label for="name">Enter film name </label>
-      <input type="text" name="name" id="name"
+      <!-- [(ngModel)] permet des infos bidirectionnel template/module  -->
+      <input type="text" class="" id="name"
              required
              pattern="^[a-zA-Zàéèç ]{1,25}$"
-             [(ngModel)]="filmUnique.name" name="name"
+             [(ngModel)]="film.name" name="name"
              #name="ngModel">
+      <!-- permet de mettre un message d'erreur sur la saisie -->
+      <div [hidden]="name.valid || name.pristine">
+        le nom doit faire de 1 a 25 caractères !
+      </div>
     </div>
 
     <!-- demande la description du film -->
     <div class="">
       <label for="description">Enter description film: </label>
-      <input type="text" name="description" id="description"
-             [(ngModel)]="filmUnique.description" name="description"
+      <input type="text" class="" id="description"
+             [(ngModel)]="film.description" name="description"
              #description="ngModel">
     </div>
 
     <!-- demande le prix du film -->
     <div class="">
       <label for="price">Enter price film: </label>
-      <input type="number" name="price" id="price"
+      <input type="number" class="" id="price"
              required
              pattern="^[0-9]{1,3}$"
-             [(ngModel)]="filmUnique.price" name="price"
+             [(ngModel)]="film.price" name="price"
              #price="ngModel">
+      <!-- pristine est une option angular pour éviter d'afficher direct le message d'erreur -->
+      <div [hidden]="price.valid || price.pristine">
+        le prix doit etre compris entre 1 et 999 !
+      </div>
     </div>
 
     <!-- demande le nom de l'artiste (realisateur/vente de tableau) du film -->
     <div class="">
       <label for="artiste">Enter artiste film: </label>
       <input type="text" name="artiste" id="artiste"
-             [(ngModel)]="filmUnique.artiste" name="artiste"
+             [(ngModel)]="film.artiste" name="artiste"
              #artiste="ngModel">
     </div>
 
