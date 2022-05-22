@@ -7,8 +7,8 @@
       <label for="name">Enter film name </label>
       <input type="text" name="name" id="name"
              required
-             pattern="^[a-zA-Zàéèç]{1-25}$"
-             [(ngModel)]="film.name" name="name"
+             pattern="^[a-zA-Zàéèç ]{1,25}$"
+             [(ngModel)]="filmUnique.name" name="name"
              #name="ngModel">
     </div>
 
@@ -16,7 +16,7 @@
     <div class="">
       <label for="description">Enter description film: </label>
       <input type="text" name="description" id="description"
-             [(ngModel)]="film.description" name="description"
+             [(ngModel)]="filmUnique.description" name="description"
              #description="ngModel">
     </div>
 
@@ -24,9 +24,9 @@
     <div class="">
       <label for="price">Enter price film: </label>
       <input type="number" name="price" id="price"
-             require
+             required
              pattern="^[0-9]{1,3}$"
-             [(ngModel)]="film.price" name="price"
+             [(ngModel)]="filmUnique.price" name="price"
              #price="ngModel">
     </div>
 
@@ -34,7 +34,7 @@
     <div class="">
       <label for="artiste">Enter artiste film: </label>
       <input type="text" name="artiste" id="artiste"
-             [(ngModel)]="film.artiste" name="artiste"
+             [(ngModel)]="filmUnique.artiste" name="artiste"
              #artiste="ngModel">
     </div>
 
