@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Film } from '../film/film'
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FilmService } from '../film.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class ShowFilmComponent implements OnInit {
   // j'importe activateRoute POUR AVOIR ACCES a diférent params
   constructor(
     private route: ActivatedRoute,
-    private filmService: FilmService
+    private filmService: FilmService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -27,5 +28,9 @@ export class ShowFilmComponent implements OnInit {
     if (filmId) {
       this.film = this.filmService.getShowFilm(+filmId);
     }
+  }
+
+  editFilm(film: Film){
+    this.router.navigate(["show-film", film.id, "edit"])
   }
 }

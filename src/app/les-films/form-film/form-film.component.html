@@ -1,0 +1,50 @@
+<div class="container">
+ <p> salut je suis bien ici mais j'ai pas de film</p>
+  <form *ngIf="filmUnique"  class="" (ngSubmit)="onSubmit(filmForm)" #filmForm="ngForm">
+
+    <!-- demande le nom du film -->
+    <div class="">
+      <label for="name">Enter film name </label>
+      <input type="text" name="name" id="name"
+             required
+             pattern="^[a-zA-Zàéèç]{1-25}$"
+             [(ngModel)]="film.name" name="name"
+             #name="ngModel">
+    </div>
+
+    <!-- demande la description du film -->
+    <div class="">
+      <label for="description">Enter description film: </label>
+      <input type="text" name="description" id="description"
+             [(ngModel)]="film.description" name="description"
+             #description="ngModel">
+    </div>
+
+    <!-- demande le prix du film -->
+    <div class="">
+      <label for="price">Enter price film: </label>
+      <input type="number" name="price" id="price"
+             require
+             pattern="^[0-9]{1,3}$"
+             [(ngModel)]="film.price" name="price"
+             #price="ngModel">
+    </div>
+
+    <!-- demande le nom de l'artiste (realisateur/vente de tableau) du film -->
+    <div class="">
+      <label for="artiste">Enter artiste film: </label>
+      <input type="text" name="artiste" id="artiste"
+             [(ngModel)]="film.artiste" name="artiste"
+             #artiste="ngModel">
+    </div>
+
+    <!-- submit -->
+    <div class="">
+      <button type="submit"
+        class=""
+        [disabled]="!filmForm.form.valid">
+        valider
+      </button>
+    </div>
+  </form>
+</div>

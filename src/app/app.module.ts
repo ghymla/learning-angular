@@ -10,6 +10,7 @@ import { PageNoFoundComponent } from './page-no-found/page-no-found.component';
 import { LesFilmsModule } from './les-films/les-films.module';
 import { FilmComponent } from './les-films/film/film.component';
 import { BorderCardDirective } from './les-films/border-card.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BorderCardDirective } from './les-films/border-card.directive';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     LesFilmsModule,
     AppRoutingModule
   ],
