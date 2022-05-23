@@ -6,7 +6,7 @@ import { FilmService } from '../film.service';
 @Component({
   selector: 'app-edit-film',
   template: `
-    <h3> Edit your favorite Film {{ film?.name }}</h3>
+    <h3 class="title"> Edit your favorite Film {{ film?.name }}</h3>
     <app-form-film *ngIf="film" [film]="film"></app-form-film>
 
   `,
