@@ -1,14 +1,20 @@
 <!-- helpeur d'angular routerLink = linkTo -->
 <a routerLink="/index" routerLinkActive="active"> go to index </a>
-<div class="container">
-  <img src="../assets/images/deadpool.jpg" alt="une affiche" class="vignette"/>
-  <div *ngIf="film">
-    <strong> {{ film.name }}</strong>
-    <p> {{ film.description }}</p>
-    <strong> {{ film.price }}</strong>
-    <em> {{ film.artiste }}</em>
-    <button> {{ film.location }}</button>
-    <a (click)="editFilm(film)"> edit </a>
-  </div>
+<div class="show-card">
 
+  <h3 *ngIf="film" class="title">{{ film.name }}</h3>
+
+  <div class="flex-row space-a">
+    <img src="../assets/images/deadpool.jpg" alt="une affiche" class="poster content"/>
+    <div *ngIf="film" class="flex-colum space-bet">
+      <div class="bor-bot first-mag">
+        <strong> synopsie </strong>
+        <p > {{ film.description }}</p>
+      </div>
+      <strong class="bor-bot marg"> {{ film.price }} €</strong>
+      <em class="bor-bot marg"> {{ film.artiste }}</em>
+      <i class="bor-bot marg"> {{ film.location }}</i>
+      <a (click)="editFilm(film)" class="self-end"><button class="edit">edit</button></a>
+    </div>
+  </div>
 </div>
