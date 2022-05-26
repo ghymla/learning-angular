@@ -13,7 +13,7 @@ import { FilmService } from '../film.service';
   styleUrls: ['./edit-film.component.scss']
 })
 export class EditFilmComponent implements OnInit {
-  film: Film|undefined;
+  film: Film | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +26,9 @@ export class EditFilmComponent implements OnInit {
     // si j'ai quelque chose j'injecte dans mon model l'id
     // je récup mon service pour choper l'id
     if (filmId) {
-      this.film = this.filmService.getShowFilm(+filmId);
+      this.filmService.getShowFilm(+filmId).subscribe(
+        film => this.film = film
+      );
     }
   }
 

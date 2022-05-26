@@ -1,14 +1,14 @@
 <!-- helpeur d'angular routerLink = linkTo -->
 <a routerLink="/index" routerLinkActive="active"> &lt; </a>
-<div class="show-card">
+<div *ngIf="film" class="show-card">
 
-  <h3 *ngIf="film" class="title">{{ film.name }}</h3>
+  <h3  class="title">{{ film.name }}</h3>
 
   <div class="flex-row space-a">
     <img src="../assets/images/deadpool.jpg" alt="une affiche" class="poster content"/>
 
     <div class="flex-colum space-bet">
-      <div *ngIf="film" class="flex-colum">
+      <div  class="flex-colum">
         <div class="bor-bot-syn first-mag">
           <strong> synopsie </strong>
           <p > {{ film.description }}</p>
@@ -18,7 +18,7 @@
         <i class="bor-bot marg"> {{ film.location }}</i>
       </div>
 
-      <a *ngIf="film" (click)="editFilm(film)" class="self-end"><button class="edit">edit</button></a>
+      <a  (click)="editFilm(film)" class="self-end"><button class="edit">edit</button></a>
     </div>
 
   </div>

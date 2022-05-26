@@ -19,7 +19,9 @@ export class FilmComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.films = this.filmService.getfilms();
+    this.filmService.getfilms().subscribe(
+      filmList => this.films = filmList
+    );
   }
 
   // petit event clasique pour montrer le fonctionnement

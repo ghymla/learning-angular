@@ -9,7 +9,7 @@ import { FilmService } from '../film.service';
   styleUrls: ['./show-film.component.scss']
 })
 export class ShowFilmComponent implements OnInit {
-  film: Film|undefined  // je prend le model de ma liste qui servira de foreach
+  film: Film | undefined // je prend le model de ma liste qui servira de foreach
 
   // j'importe activateRoute POUR AVOIR ACCES a diférent params
   constructor(
@@ -26,7 +26,9 @@ export class ShowFilmComponent implements OnInit {
     // si j'ai quelque chose j'injecte dans mon model l'id
     // je récup mon service pour choper l'id
     if (filmId) {
-      this.film = this.filmService.getShowFilm(+filmId);
+      this.filmService.getShowFilm(+filmId).subscribe(
+        film => this.film = film
+      );
     }
   }
 

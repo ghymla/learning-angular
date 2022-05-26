@@ -9,6 +9,7 @@ import { EditFilmComponent } from './edit-film/edit-film.component';
 
 
 
+
 const filmRoute: Routes = [
   {path: 'show-film/:id', component: ShowFilmComponent},
   {path: 'edit-film/:id', component: EditFilmComponent},

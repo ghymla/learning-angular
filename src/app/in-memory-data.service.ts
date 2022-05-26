@@ -8,6 +8,7 @@ import { FILMS } from './les-films/film/films-list';
 export class InMemoryDataService implements InMemoryDbService {
 
   createDb(){
-    return { FILMS };
+    const films = FILMS;
+    return { films };
   }
 }

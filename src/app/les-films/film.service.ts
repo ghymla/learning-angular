@@ -12,8 +12,8 @@ export class FilmService {
   constructor(private http: HttpClient) { }
 
   // je récupe tous les films grace a ma fake api in memory data service
-  getfilms(): Observable< Film [] | unknown > {
-    return this.http.get< Film [] >('api/index').pipe(
+  getfilms(): Observable< Film []> {
+    return this.http.get< Film [] >('api/films').pipe(
       tap((films) => this.log(films)),
       catchError((error) =>
         this.handleError(error, [])
@@ -23,8 +23,8 @@ export class FilmService {
 
 
   // je chope le film en question avec sont id et je retourne un objet Film (model)
-  getShowFilm(filmId: number): Observable< Film | undefined | unknown > {
-    return this.http.get< Film >(`api/show-film/${filmId}`).pipe(
+  getShowFilm(filmId: number): Observable< Film | undefined > {
+    return this.http.get< Film >(`api/films/${filmId}`).pipe(
       tap((response) => this.log(response)),
       catchError((error) =>
         this.handleError(error, undefined)

@@ -1,8 +1,8 @@
 <p>ceci est la section film</p>
-<div class="flex-row">
+<div *ngIf="films" class="flex-row">
   <div *ngFor="let film of films">
     <!-- action click j'envoi sur la page du film (j'injecte donc mon objet a ma méthod) -->
-    <div class="card flex-row" (click)="goToFilm(film)" appBorderCard="grey">
+    <div class="card flex-row mr" (click)="goToFilm(film)" appBorderCard="grey">
       <img src="../assets/images/deadpool.jpg" alt="une affiche" class="vignette"/>
       <div class="content">
         <strong>{{ film.name }}</strong>
