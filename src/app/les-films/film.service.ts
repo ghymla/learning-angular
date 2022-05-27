@@ -45,6 +45,13 @@ export class FilmService {
     );
   }
 
+  deleteFilmById(filmId: number): Observable< null > {
+    return this.http.delete(`api/films/${filmId}`).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, null))
+    )
+  }
+
   // method priver pour réfacto un peu affichage de notre get avec api
   private log(response: any) {
     console.table(response);

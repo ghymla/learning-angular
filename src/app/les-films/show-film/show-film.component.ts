@@ -35,4 +35,16 @@ export class ShowFilmComponent implements OnInit {
   editFilm(film: Film){
     this.router.navigate(["edit-film", film.id])
   }
+
+
+  goToIndex(){
+    this.router.navigate(["index"]);
+  }
+
+  deleteFilm(film: Film) {
+    // suppression du film grace a sont Id
+    this.filmService.deleteFilmById(film.id)
+      // avecsubscribe je peux le rediriger vers l'index
+      .subscribe(() => this.goToIndex());
+  }
 }
