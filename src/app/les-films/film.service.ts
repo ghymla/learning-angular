@@ -8,8 +8,8 @@ import { catchError, Observable, of, tap } from 'rxjs';
 })
 export class FilmService {
 
-
   constructor(private http: HttpClient) { }
+
 
   // je récupe tous les films grace a ma fake api in memory data service
   getfilms(): Observable< Film []> {
@@ -32,18 +32,33 @@ export class FilmService {
     );
   }
 
-  updateFilm(film: Film): Observable< null >{
 
+  updateFilm(film: Film): Observable< null >{
     // creation d'une constante pour notre header
     const httpOptions = {
       headers: new HttpHeaders({'content-type': 'application/json' })
     }
 
+    // envoi des nouvelle données put('url', coquileRemplie, header)
     return this.http.put('api/films', film, httpOptions).pipe(
       tap((response) => this.log(response)),
       catchError((error) => this.handleError(error, null))
     );
   }
+
+  // ici l'observable (le retour demander) est tres important, c'est pour nous créé un Id automatiquement
+  createFilm(film: Film): Observable< Film > {
+    // creation d'une constante pour notre header
+    const httpOptions = {
+      headers: new HttpHeaders({'content-type': 'application/json' })
+    }
+    // pareille je demande un retour objet <Film> pour l'Id
+    return this.http.post< Film >('api/films', film, httpOptions).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, null))
+    );
+  }
+
 
   deleteFilmById(filmId: number): Observable< null > {
     return this.http.delete(`api/films/${filmId}`).pipe(
@@ -52,10 +67,12 @@ export class FilmService {
     )
   }
 
+
   // method priver pour réfacto un peu affichage de notre get avec api
   private log(response: any) {
     console.table(response);
   }
+
 
   // récupération des érreurs et renvoi le type voulu pour éviter un crach
   // of() permet la creation de flux

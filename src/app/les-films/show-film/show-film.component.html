@@ -17,9 +17,11 @@
         <em class="bor-bot marg"> {{ film.artiste }}</em>
         <i class="bor-bot marg"> {{ film.location }}</i>
       </div>
-
-      <a  (click)="editFilm(film)" class="self-end"><button class="edit">edit</button></a>
-      <a  (click)="deleteFilm(film)" class="self-end"><button class="edit">delete</button></a>
+      <div class="self-end">
+        <a  (click)="addFilm(film)"> <button class="edit"> add </button></a>
+        <a  (click)="editFilm(film)"> <button class="edit"> edit </button></a>
+        <a  (click)="deleteFilm(film)"> <button class="delete"> delete </button></a>
+      </div>
     </div>
 
   </div>

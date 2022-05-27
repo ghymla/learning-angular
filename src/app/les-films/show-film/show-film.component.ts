@@ -47,4 +47,8 @@ export class ShowFilmComponent implements OnInit {
       // avecsubscribe je peux le rediriger vers l'index
       .subscribe(() => this.goToIndex());
   }
+
+  addFilm(film: Film) {
+    this.router.navigate(["create-film", film])
+  }
 }

@@ -104,6 +104,18 @@
   }
 }
 
+.delete {
+  padding: 10px 30px;
+  background-color: #dc3545;
+  border: 2px solid #c62d3c;
+  border-radius: 10px;
+  margin: 0 10px 10px 0;
+  &.edit:hover {
+    background-color: #c62d3c;
+    border: 2px solid #dc3545;
+  }
+}
+
 .poster {
   max-width: 367px;
   max-height: 450px;
