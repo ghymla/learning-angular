@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Film } from "./film/film";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError, Observable, of, tap } from 'rxjs';
 
 @Injectable({
@@ -32,9 +32,21 @@ export class FilmService {
     );
   }
 
+  updateFilm(film: Film): Observable< null >{
+
+    // creation d'une constante pour notre header
+    const httpOptions = {
+      headers: new HttpHeaders({'content-type': 'application/json' })
+    }
+
+    return this.http.put('api/films', film, httpOptions).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, null))
+    );
+  }
 
   // method priver pour réfacto un peu affichage de notre get avec api
-  private log(response: Film [] | Film | undefined) {
+  private log(response: any) {
     console.table(response);
   }
 
