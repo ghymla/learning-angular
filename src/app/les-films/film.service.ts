@@ -33,6 +33,20 @@ export class FilmService {
   }
 
 
+  searchFilm(term: string): Observable< Film [] > {
+    if (term.length < 2) {
+      return of([]);
+    }
+
+    return this.http.get< Film [] >(`api/films/?name=${term}`).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) =>
+        this.handleError(error, [])
+      )
+    );
+  }
+
+
   updateFilm(film: Film): Observable< null >{
     // creation d'une constante pour notre header
     const httpOptions = {

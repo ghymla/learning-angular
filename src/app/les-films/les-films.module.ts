@@ -8,9 +8,6 @@ import { EditFilmComponent } from './edit-film/edit-film.component';
 import { CreateFilmComponent } from './create-film/create-film.component';
 
 
-
-
-
 const filmRoute: Routes = [
   {path: 'show-film/:id', component: ShowFilmComponent},
   {path: 'create-film', component: CreateFilmComponent},

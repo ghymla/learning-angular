@@ -14,6 +14,7 @@ import { BorderCardDirective } from './les-films/border-card.directive';
 import { FormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { SearchBarComponent } from './les-films/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     MangasComponent,
     FilmComponent,
     BorderCardDirective,
-    PageNoFoundComponent
+    PageNoFoundComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
