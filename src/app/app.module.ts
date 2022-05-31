@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { SearchBarComponent } from './les-films/search-bar/search-bar.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchBarComponent } from './les-films/search-bar/search-bar.component'
     FilmComponent,
     BorderCardDirective,
     PageNoFoundComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

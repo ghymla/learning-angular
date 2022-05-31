@@ -6,12 +6,13 @@ import { FormFilmComponent } from './form-film/form-film.component';
 import { FormsModule } from '@angular/forms';
 import { EditFilmComponent } from './edit-film/edit-film.component';
 import { CreateFilmComponent } from './create-film/create-film.component';
+import { AuthGuard } from '../auth.guard';
 
 
 const filmRoute: Routes = [
-  {path: 'show-film/:id', component: ShowFilmComponent},
-  {path: 'create-film', component: CreateFilmComponent},
-  {path: 'edit-film/:id', component: EditFilmComponent},
+  {path: 'show-film/:id', component: ShowFilmComponent, canActivate: [AuthGuard]},
+  {path: 'create-film', component: CreateFilmComponent, canActivate: [AuthGuard]},
+  {path: 'edit-film/:id', component: EditFilmComponent, canActivate: [AuthGuard]},
 ]
 
 @NgModule({

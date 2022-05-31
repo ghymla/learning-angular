@@ -1,0 +1,39 @@
+<form  class="flex-colum space-bet champs" #loginForm="ngForm">
+
+  <!-- groupement des inputs et le bouton validation -->
+  <div class="flex-colum">
+
+    <!-- demande le nom du film -->
+    <div class="marg">
+      <label for="name" class="label">Enter your name: </label>
+      <!-- [(ngModel)] permet des infos bidirectionnel template/module  -->
+      <input type="text" class="input"
+            required
+            [(ngModel)]="name" name="name" >
+    </div>
+
+    <!-- demande la description du film -->
+    <div class="marg">
+      <label for="password" class="label">Enter your password: </label>
+      <input type="text" class="input"
+            required
+            [(ngModel)]="password" name="password" >
+    </div>
+  </div>
+  <div class="self-end">
+    <button *ngIf="!auth.isLoggedIn"
+      type="submit"
+      class="edit"
+      [disabled]="!loginForm.form.valid"
+      (click)="login()" >
+      login
+    </button>
+    <button *ngIf="auth.isLoggedIn"
+      type="submit"
+      class="edit"
+      [disabled]="!loginForm.form.valid"
+      (click)="logout()" >
+      déconection
+    </button>
+  </div>
+</form>
