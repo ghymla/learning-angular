@@ -8,13 +8,15 @@ import { Manga } from '../les-mangas/mangas/manga';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  mangaList: Manga [];
+  mangas: Manga [];
   selectManga: Manga|undefined;
 
   constructor(private mangaSerice: MangaService) { }
 
   ngOnInit() {
-    this.mangaList = this.mangaSerice.getMangas()
+    this.mangaSerice.getMangas().subscribe(
+      mangasList => this.mangas = mangasList
+    )
   }
 
   mangaSelect(value: string){

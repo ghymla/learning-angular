@@ -15,7 +15,9 @@ export class MangasComponent implements OnInit {
 
   ngOnInit() {
     this.mangaService.getMangaByName(Manga.name);
-    this.mangas = this.mangaService.getMangas();
+    this.mangaService.getMangas().subscribe(
+      mangasList => this.mangas = mangasList
+    )
   }
 
   selectManga(manga: Manga){
