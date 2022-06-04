@@ -1,7 +1,7 @@
 <p>Mangas !!</p>
 <div class="flex-row">
   <div *ngFor="let manga of mangas">
-    <div class="card flex-row mr" appBorderCard="grey">
+    <div class="card flex-row mr" appBorderCard="grey" (click)="goToManga(manga)">
       <img src="../assets/images/avatar.webp" alt="une affiche" class="vignette">
       <div class="content">
         <strong>{{ manga.name }}</strong>

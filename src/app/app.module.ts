@@ -16,6 +16,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { SearchBarComponent } from './les-films/search-bar/search-bar.component';
 import { LoginComponent } from './login/login.component';
+import { LesMangasModule } from './les-mangas/les-mangas.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
     LesFilmsModule,
+    LesMangasModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Manga } from './manga'
 import { MangaService } from '../manga.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,10 @@ import { MangaService } from '../manga.service';
 export class MangasComponent implements OnInit {
   mangas: Manga [];
 
-  constructor(private mangaService: MangaService) { }
+  constructor(
+    private mangaService: MangaService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.mangaService.getMangaByName(Manga.name);
@@ -20,7 +24,7 @@ export class MangasComponent implements OnInit {
     )
   }
 
-  selectManga(manga: Manga){
-    console.log(`voici l'objet manga: ${manga.name}`)
+  goToManga(manga: Manga){
+    this.router.navigate(['show-manga', manga.id])
   }
 }

@@ -1,0 +1,30 @@
+<a routerLink="/index" routerLinkActive="active"> &lt; </a>
+<div *ngIf="manga" class="show-card">
+
+  <h3  class="title">{{ manga.name }}</h3>
+
+  <div class="flex-row space-a">
+    <img src="../assets/images/avatar.jpg" alt="une affiche" class="poster content"/>
+
+    <div class="flex-colum space-bet">
+      <div  class="flex-colum">
+        <div class="bor-bot-syn first-mag">
+          <strong> synopsie </strong>
+          <p > {{ manga.description }}</p>
+        </div>
+        <strong class="bor-bot marg"> {{ manga.price }} €</strong>
+        <em class="bor-bot marg"> {{ manga.artiste }}</em>
+        <i class="bor-bot marg"> {{ manga.location }}</i>
+      </div>
+      <div class="self-end">
+        <!--
+        <a  (click)="addmanga(manga)"> <button class="edit"> add </button></a>
+        <a  (click)="editmanga(manga)"> <button class="edit"> edit </button></a>
+        <a  (click)="deletemanga(manga)"> <button class="delete"> delete </button></a>
+        -->
+      </div>
+    </div>
+
+  </div>
+
+</div>

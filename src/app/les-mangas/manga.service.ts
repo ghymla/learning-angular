@@ -19,10 +19,20 @@ export class MangaService {
 
   getMangas(): Observable<Manga []> {
     return this.http.get<Manga []>('api/mangas').pipe(
-      catchError((error) => {
-        console.error(error);
-        return of([]);
-      })
+      catchError((error) => this.handleError(error, [])
+      )
     )
+  }
+
+  getMangasById(mangaId: number): Observable<Manga | undefined> {
+    return this.http.get<Manga>(`api/mangas/${mangaId}`).pipe(
+      catchError((error) => this.handleError(error, undefined)
+      )
+    )
+  }
+
+  private handleError(error: Error, defaultValue: any) {
+    console.error(error);
+    return of(defaultValue);
   }
 }
