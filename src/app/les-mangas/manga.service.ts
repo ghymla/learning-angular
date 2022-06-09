@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { Manga } from "./mangas/manga";
@@ -29,6 +29,16 @@ export class MangaService {
       catchError((error) => this.handleError(error, undefined)
       )
     )
+  }
+
+  updateManga(manga: Manga): Observable<null> {
+    // creation d'une constante pour notre header
+    const httpOptions = {
+      headers: new HttpHeaders({'content-type': 'application/json' })
+    }
+
+    return this.http.put<null>('api/mangas',  manga, httpOptions)
+      .pipe(catchError((error) => this.handleError(error, null)))
   }
 
   private handleError(error: Error, defaultValue: any) {
