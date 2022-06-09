@@ -1,6 +1,6 @@
 <div class="show-card">
   <div class="flex-row">
-    <img src="../assets/images/deadpool.jpg" alt="une affiche" class="poster content"/>
+    <img src="../assets/images/avatar.webp" alt="une affiche" class="poster content"/>
 
     <form *ngIf="manga"  class="flex-colum space-bet champs" (ngSubmit)="onSubmit()" #mangaForm="ngForm">
 
@@ -13,7 +13,7 @@
           <!-- [(ngModel)] permet des infos bidirectionnel template/module  -->
           <input type="text" class="input" id="name"
                 required
-                pattern="^[a-zA-Zàéèç ]{1,25}$"
+                pattern="^[a-zA-Zàéèç ]{1,45}$"
                 [(ngModel)]="manga.name" name="name"
                 #name="ngModel">
           <!-- permet de mettre un message d'erreur sur la saisie -->
@@ -35,7 +35,7 @@
           <label for="price" class="label">Enter price manga: </label>
           <input type="number" class="input" id="price"
                 required
-                pattern="^[0-9]{1,3}$"
+                pattern="^[0-9]+([,\.][0-9]+){1,3}$"
                 [(ngModel)]="manga.price" name="price"
                 #price="ngModel">
           <!-- pristine est une option angular pour éviter d'afficher direct le message d'erreur -->

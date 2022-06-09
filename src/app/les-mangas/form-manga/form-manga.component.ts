@@ -26,7 +26,7 @@ export class FormMangaComponent implements OnInit {
     // je veux que les modif du manga soi faite
     this.mangaService.updateManga(this.manga).subscribe(
       // puis je redirige vers le manga
-      () => this.router.navigate(['api/mangas', this.manga.id])
+      () => this.router.navigate(['show-manga', this.manga.id])
     )
 
   }

@@ -5,15 +5,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../auth.guard';
 import { FormsModule } from '@angular/forms';
 import { FormMangaComponent } from './form-manga/form-manga.component';
+import { EditMangaComponent } from './edit-manga/edit-manga.component';
 
 const mangaRoute: Routes = [
-  {path: 'show-manga/:id', component: ShowMangaComponent, canActivate: [AuthGuard]}
+  {path: 'show-manga/:id', component: ShowMangaComponent, canActivate: [AuthGuard]},
+  {path: 'edit-manga/:id', component: EditMangaComponent, canActivate: [AuthGuard]}
 ]
 
 @NgModule({
   declarations: [
     ShowMangaComponent,
-    FormMangaComponent
+    FormMangaComponent,
+    EditMangaComponent
   ],
   imports: [
     CommonModule,

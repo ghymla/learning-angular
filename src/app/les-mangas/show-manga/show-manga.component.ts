@@ -28,4 +28,8 @@ export class ShowMangaComponent implements OnInit {
     }
   }
 
+  editManga(manga: Manga) {
+    this.router.navigate(['edit-manga', manga.id])
+  }
+
 }
