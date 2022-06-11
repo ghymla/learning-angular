@@ -1,4 +1,8 @@
-<p>Mangas !!</p>
+<div class="flex-row space-bet">
+  <p>Mangas !!</p>
+  <a class="padd" (click)="addManga()"> <button class="edit"> add </button></a>
+</div>
+
 <div class="flex-row">
   <div *ngFor="let manga of mangas">
     <div class="card flex-row mr" appBorderCard="grey" (click)="goToManga(manga)">

@@ -27,4 +27,8 @@ export class MangasComponent implements OnInit {
   goToManga(manga: Manga){
     this.router.navigate(['show-manga', manga.id])
   }
+
+  addManga() {
+    this.router.navigate(['create-manga'])
+  }
 }

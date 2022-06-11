@@ -23,11 +23,17 @@ export class FormMangaComponent implements OnInit {
   }
 
   onSubmit() {
-    // je veux que les modif du manga soi faite
-    this.mangaService.updateManga(this.manga).subscribe(
-      // puis je redirige vers le manga
-      () => this.router.navigate(['show-manga', this.manga.id])
-    )
-
+    // verification de create ou édit
+    if (this.isCreateManga) {
+      this.mangaService.createManga(this.manga).subscribe(
+        () => this.router.navigate(['index'])
+      )
+    } else {
+        // je veux que les modif du manga soi faite
+      this.mangaService.updateManga(this.manga).subscribe(
+        // puis je redirige vers le manga
+        () => this.router.navigate(['show-manga', this.manga.id])
+      )
+    }
   }
 }

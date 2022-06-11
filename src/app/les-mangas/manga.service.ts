@@ -41,6 +41,23 @@ export class MangaService {
       .pipe(catchError((error) => this.handleError(error, null)))
   }
 
+  deleteManga(mangaId: number): Observable< null > {
+    return this.http.delete(`api/mangas/${mangaId}`).pipe(
+      catchError((error) => this.handleError(error, null))
+    )
+  }
+
+  createManga(manga: Manga): Observable<null> {
+    // creation d'une constante pour notre header
+    const httpOptions = {
+      headers: new HttpHeaders({'content-type': 'application/json' })
+    }
+
+    return this.http.post('api/mangas', manga, httpOptions).pipe(
+      catchError((error) => this.handleError(error, null))
+    )
+  }
+
   private handleError(error: Error, defaultValue: any) {
     console.error(error);
     return of(defaultValue);

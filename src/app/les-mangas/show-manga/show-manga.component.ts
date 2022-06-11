@@ -32,4 +32,9 @@ export class ShowMangaComponent implements OnInit {
     this.router.navigate(['edit-manga', manga.id])
   }
 
+  deleteManga(manga: Manga) {
+    this.mangaService.deleteManga(manga.id).subscribe(
+      () => this.router.navigate(['index'])
+    )
+  }
 }
