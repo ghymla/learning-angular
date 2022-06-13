@@ -1,0 +1,29 @@
+<a routerLink="/index" routerLinkActive="active"> &lt; </a>
+<div *ngIf="serie" class="show-card">
+
+  <h3  class="title">{{ serie.name }}</h3>
+
+  <div class="flex-row space-a">
+    <img src="../assets/images/avatar.webp" alt="une affiche" class="poster content"/>
+
+    <div class="flex-colum space-bet">
+      <div  class="flex-colum">
+        <div class="bor-bot-syn first-mag">
+          <strong> synopsie </strong>
+          <p > {{ serie.description }}</p>
+        </div>
+        <strong class="bor-bot marg"> {{ serie.price }} €</strong>
+        <em class="bor-bot marg"> {{ serie.artiste }}</em>
+        <i class="bor-bot marg"> {{ serie.location }}</i>
+      </div>
+      <div class="self-end">
+        <!--
+          <a  (click)="editSerie(serie)"> <button class="edit"> edit </button></a>
+          <a  (click)="deleteSerie(serie)"> <button class="delete"> delete </button></a>
+        -->
+      </div>
+    </div>
+
+  </div>
+
+</div>
