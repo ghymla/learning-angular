@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Serie } from "./series/serie";
 import { catchError, Observable, of, tap } from "rxjs";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,17 @@ export class SerieService {
       catchError(
         (error) => this.handleError(error, undefined)
       )
+    )
+  }
+
+  updateSerie(serie: Serie): Observable<Serie> {
+    //header
+    const httpOptions = {
+      headers: new HttpHeaders({'content-type': 'application/json'})
+    }
+
+    return this.http.put<Serie>('api/series', serie, httpOptions).pipe(
+      catchError((error) => this.handleError(error, undefined))
     )
   }
 

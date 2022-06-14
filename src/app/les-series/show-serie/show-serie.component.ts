@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SerieService } from '../serie.service';
 import { Serie } from '../series/serie';
 
@@ -14,7 +14,8 @@ export class ShowSerieComponent implements OnInit {
 
   constructor(
     private serieService: SerieService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -28,4 +29,7 @@ export class ShowSerieComponent implements OnInit {
     }
   }
 
+  editSerie(serie: Serie) {
+    this.router.navigate(['edit-serie', serie.id])
+  }
 }

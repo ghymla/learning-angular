@@ -2,19 +2,19 @@
   <div class="flex-row">
     <img src="../assets/images/avatar.webp" alt="une affiche" class="poster content"/>
 
-    <form *ngIf="manga"  class="flex-colum space-bet champs" (ngSubmit)="onSubmit()" #mangaForm="ngForm">
+    <form *ngIf="serie"  class="flex-colum space-bet champs" (ngSubmit)="onSubmit()" #serieForm="ngForm">
 
       <!-- groupement des inputs et le bouton validation -->
       <div class="flex-colum">
 
-        <!-- demande le nom du manga -->
+        <!-- demande le nom du serie -->
         <div class="marg">
-          <label for="name" class="label">Enter manga name: </label>
+          <label for="name" class="label">Enter serie name: </label>
           <!-- [(ngModel)] permet des infos bidirectionnel template/module  -->
           <input type="text" class="input" id="name"
                 required
                 pattern="^[a-zA-Zàéèç ]{1,45}$"
-                [(ngModel)]="manga.name" name="name"
+                [(ngModel)]="serie.name" name="name"
                 #name="ngModel">
           <!-- permet de mettre un message d'erreur sur la saisie -->
           <div [hidden]="name.valid || name.pristine">
@@ -22,21 +22,21 @@
           </div>
         </div>
 
-        <!-- demande la description du manga -->
+        <!-- demande la description du serie -->
         <div class="marg">
-          <label for="description" class="label">Enter description manga: </label>
+          <label for="description" class="label">Enter description serie: </label>
           <input type="text" class="input" id="description"
-                [(ngModel)]="manga.description" name="description"
+                [(ngModel)]="serie.description" name="description"
                 #description="ngModel">
         </div>
 
-        <!-- demande le prix du manga -->
+        <!-- demande le prix du serie -->
         <div class="marg">
-          <label for="price" class="label">Enter price manga: </label>
+          <label for="price" class="label">Enter price serie: </label>
           <input type="number" class="input" id="price"
                 required
                 pattern="^([0-9]+([,\.][0-9])?){1,3}$"
-                [(ngModel)]="manga.price" name="price"
+                [(ngModel)]="serie.price" name="price"
                 #price="ngModel">
           <!-- pristine est une option angular pour éviter d'afficher direct le message d'erreur -->
           <div [hidden]="price.valid || price.pristine">
@@ -44,11 +44,11 @@
           </div>
         </div>
 
-        <!-- demande le nom de l'artiste (realisateur/vente de tableau) du manga -->
+        <!-- demande le nom de l'artiste (realisateur/vente de tableau) du serie -->
         <div class="marg">
-          <label for="artiste" class="label">Enter artiste manga: </label>
+          <label for="artiste" class="label">Enter artiste serie: </label>
           <input type="text" class="input" id="artiste"
-                [(ngModel)]="manga.artiste" name="artiste"
+                [(ngModel)]="serie.artiste" name="artiste"
                 #artiste="ngModel">
         </div>
       </div>
@@ -56,7 +56,7 @@
       <div class="self-end">
         <button type="submit"
           class="edit"
-          [disabled]="!mangaForm.form.valid">
+          [disabled]="!serieForm.form.valid">
           valider
         </button>
       </div>
