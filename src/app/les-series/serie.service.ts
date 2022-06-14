@@ -41,6 +41,16 @@ export class SerieService {
     )
   }
 
+  createSerie(serie: Serie): Observable<Serie> {
+    //header
+    const httpOptions = {
+      headers: new HttpHeaders({'content-type': 'application/json'})
+    }
+
+    return this.http.post<Serie>('api/series', serie, httpOptions).pipe(
+      catchError((error) => this.handleError(error, undefined))
+    )
+  }
 
   deleteSerie(serieId: number): Observable<null> {
     return this.http.delete(`api/series/${serieId}`).pipe(

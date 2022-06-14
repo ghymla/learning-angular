@@ -1,4 +1,8 @@
-<p>series !!</p>
+<div class="flex-row space-bet">
+  <p>series !!</p>
+  <a class="padd" (click)="addSerie()"> <button class="edit"> + </button></a>
+</div>
+
 <div class="flex-row">
   <div *ngFor="let serie of series">
     <div class="card flex-row mr" appBorderCard="grey" (click)="goToShowSerie(serie)">

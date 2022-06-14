@@ -10,6 +10,7 @@ import { Serie } from '../series/serie';
 })
 export class FormSerieComponent implements OnInit {
   @Input() serie: Serie;
+  isCreateSerie: boolean;
 
   constructor(
     private serieService: SerieService,
@@ -17,12 +18,21 @@ export class FormSerieComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isCreateSerie = this.route.url.includes('create')
   }
 
   onSubmit() {
-    this.serieService.updateSerie(this.serie).subscribe(
-      () => this.route.navigate(['show-serie', this.serie.id])
-    )
+    if (this.isCreateSerie) {
+      this.serieService.createSerie(this.serie).subscribe(
+        () => this.route.navigate(['index'])
+      )
+
+    } else {
+      this.serieService.updateSerie(this.serie).subscribe(
+        () => this.route.navigate(['show-serie', this.serie.id])
+      )
+    }
+
   }
 
 }

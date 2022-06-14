@@ -26,4 +26,7 @@ export class SeriesComponent implements OnInit {
     this.route.navigate(['show-serie', serie.id])
   }
 
+  addSerie() {
+    this.route.navigate(['create-serie'])
+  }
 }
