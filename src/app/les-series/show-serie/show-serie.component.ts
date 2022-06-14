@@ -32,4 +32,10 @@ export class ShowSerieComponent implements OnInit {
   editSerie(serie: Serie) {
     this.router.navigate(['edit-serie', serie.id])
   }
+
+  deleteSerie(serie: Serie) {
+    this.serieService.deleteSerie(serie.id).subscribe(
+      () => this.router.navigate(['index'])
+    )
+  }
 }

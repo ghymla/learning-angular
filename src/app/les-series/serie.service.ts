@@ -29,6 +29,7 @@ export class SerieService {
     )
   }
 
+
   updateSerie(serie: Serie): Observable<Serie> {
     //header
     const httpOptions = {
@@ -39,6 +40,14 @@ export class SerieService {
       catchError((error) => this.handleError(error, undefined))
     )
   }
+
+
+  deleteSerie(serieId: number): Observable<null> {
+    return this.http.delete(`api/series/${serieId}`).pipe(
+      catchError((error) => this.handleError(error, null))
+    )
+  }
+
 
   private handleError(error: Error, errorDefault: any) {
     console.error(error);
