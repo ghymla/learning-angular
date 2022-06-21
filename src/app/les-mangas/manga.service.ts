@@ -24,6 +24,18 @@ export class MangaService {
     )
   }
 
+
+  searchManga(name: string): Observable<Manga []>{
+    if (name.length < 2) {
+      return of([]);
+    }
+
+    return this.http.get<Manga []>(`api/mangas/?name=${name}`).pipe(
+      catchError((error) => this.handleError(error, []))
+    )
+  }
+
+
   getMangasById(mangaId: number): Observable<Manga | undefined> {
     return this.http.get<Manga>(`api/mangas/${mangaId}`).pipe(
       catchError((error) => this.handleError(error, undefined)
@@ -62,4 +74,5 @@ export class MangaService {
     console.error(error);
     return of(defaultValue);
   }
+
 }

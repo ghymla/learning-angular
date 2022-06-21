@@ -30,6 +30,16 @@ export class SerieService {
   }
 
 
+  searchSerie(name: string): Observable <Serie []>{
+    if (name.length < 2) {
+      return of([]);
+    }
+
+    return this.http.get<Serie []>(`api/series/?name=${name}`).pipe(
+      catchError((error) => this.handleError(error, []))
+    )
+  }
+
   updateSerie(serie: Serie): Observable<Serie> {
     //header
     const httpOptions = {

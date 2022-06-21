@@ -11,7 +11,9 @@ export class IndexComponent implements OnInit {
   mangas: Manga [];
   selectManga: Manga|undefined;
 
-  constructor(private mangaSerice: MangaService) { }
+  constructor(
+    private mangaSerice: MangaService
+  ) { }
 
   ngOnInit() {
     this.mangaSerice.getMangas().subscribe(

@@ -9,6 +9,11 @@
 <!-- j'utilise ma variable films$ qui contiendra tous les films de la liste en
      fonction de la recherche, c'est de l'asynchrone car on travaille avec des
      observable (flux de donnée) on utilise donc le pipe async -->
-<a *ngFor="let film of films$ | async" (click)="goToDetailFilm(film)">
-  {{ film.name }}
+<a *ngFor="let result of categories$ | async" >
+  <div>{{ result.name }}</div>
 </a>
+<select name="" id="" #categories (click)="categorieChoice(categories.value)">
+  <option value="film">Film</option>
+  <option value="manga">Mangas</option>
+  <option value="serie">Series</option>
+</select>
