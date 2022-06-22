@@ -21,7 +21,7 @@ export class SearchBarComponent implements OnInit {
   // il va un peu agir comme un foreach
   categories$: Observable<any>;
   // j'intégre une autre variable, la catégorie
-  categorie: string;
+  categorie: string = "film";
 
 
   constructor(
@@ -51,9 +51,17 @@ export class SearchBarComponent implements OnInit {
     this.searchTerms.next(term);
   }
 
-  goToDetailFilm(film: Film) {
-    const link = ['/show-film', film.id]
-    this.router.navigate(link);
+  goToDetail(item: Film | Manga | Serie) {
+    if (this.categorie === "film") {
+      const link = ['/show-film', item.id]
+      this.router.navigate(link);
+    } else if ( this.categorie === "manga") {
+      const link = ['/show-manga', item.id]
+      this.router.navigate(link);
+    } else if ( this.categorie === "serie") {
+      const link = ['/show-serie', item.id]
+      this.router.navigate(link);
+    }
   }
 
   categorieChoice(categorie: string) {

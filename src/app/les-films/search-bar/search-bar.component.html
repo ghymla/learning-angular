@@ -1,19 +1,18 @@
 <input
   type="text"
-  class=""
+  class="mr"
   #searchBox
   (keyup)="search(searchBox.value)"
-  placeholder="rechercher un film ..."
+  placeholder="rechercher un/e {{ categorie }} ..."
 />
-
-<!-- j'utilise ma variable films$ qui contiendra tous les films de la liste en
-     fonction de la recherche, c'est de l'asynchrone car on travaille avec des
-     observable (flux de donnée) on utilise donc le pipe async -->
-<a *ngFor="let result of categories$ | async" >
-  <div>{{ result.name }}</div>
-</a>
-<select name="" id="" #categories (click)="categorieChoice(categories.value)">
+<select class="" name="" id="" #categories (click)="categorieChoice(categories.value)">
   <option value="film">Film</option>
   <option value="manga">Mangas</option>
   <option value="serie">Series</option>
 </select>
+<!-- j'utilise ma variable films$ qui contiendra tous les films de la liste en
+     fonction de la recherche, c'est de l'asynchrone car on travaille avec des
+     observable (flux de donnée) on utilise donc le pipe async -->
+<a *ngFor="let result of categories$ | async" (click)="goToDetail(result)">
+  <div>{{ result.name }}</div>
+</a>

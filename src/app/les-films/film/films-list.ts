@@ -24,5 +24,37 @@ export const FILMS: Film[] = [
     price: 150,
   artiste: "studio indépendant",
   location: true
+  },
+  {
+    id: 4,
+    name: "Buzz l'Eclair",
+    description: "un film d'action, pour les enfants",
+    price: 150,
+    artiste: "disney",
+    location: true
+  },
+  {
+    id: 5,
+    name: "Elvis",
+    description: "un Homme, un Chien, un Dieu",
+    price: 150,
+    artiste: "Elvis cop",
+    location: true
+  },
+  {
+    id: 6,
+    name: "L'Homme Parfait",
+    description: "une autobiographie de ma life",
+    price: 259.26,
+    artiste: "un type bien",
+    location: true
+  },
+  {
+    id: 7,
+    name: "Black Phone",
+    description: "un téléphone qui refuse tout autre couleur",
+    price: 26.15,
+    artiste: "studio indépendant",
+    location: true
   }
 ]

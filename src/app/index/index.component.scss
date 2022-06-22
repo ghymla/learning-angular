@@ -1,0 +1,31 @@
+.index {
+  overflow: hidden;
+}
+
+.relative {
+  position: relative;
+  // display: nowrap;
+  // overflow-x: scroll;
+}
+
+.overButton {
+  background-color: rgba(15,23,30,.5);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: 0;
+    border-radius: 0;
+    color: transparent;
+    height: 100%;
+    opacity: 1;
+    outline: 0 none;
+    padding: 0;
+    position: absolute;
+    top: 28px;
+    right: 0;
+    width: 50px;
+    z-index: 1;
+    &:hover{
+      background-color: rgba(85, 132, 193, 0.5);
+      overflow: visible;
+    }
+}

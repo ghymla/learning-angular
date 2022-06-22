@@ -11,6 +11,7 @@ export class IndexComponent implements OnInit {
   mangas: Manga [];
   selectManga: Manga|undefined;
 
+
   constructor(
     private mangaSerice: MangaService
   ) { }
@@ -23,5 +24,10 @@ export class IndexComponent implements OnInit {
 
   mangaSelect(value: string){
     this.selectManga = this.mangaSerice.getMangaByName(value.toLowerCase());
+  }
+
+  suivant() {
+    // this.widgetsContent.nativeElement.scrollLeft -= 150;
+
   }
 }
