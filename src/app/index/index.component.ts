@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { MangaService } from '../les-mangas/manga.service';
 import { Manga } from '../les-mangas/mangas/manga';
 
@@ -7,13 +7,15 @@ import { Manga } from '../les-mangas/mangas/manga';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss']
 })
+
 export class IndexComponent implements OnInit {
   mangas: Manga [];
   selectManga: Manga|undefined;
 
 
   constructor(
-    private mangaSerice: MangaService
+    private mangaSerice: MangaService,
+    private elementRef: ElementRef
   ) { }
 
   ngOnInit() {
@@ -27,7 +29,11 @@ export class IndexComponent implements OnInit {
   }
 
   suivant() {
-    // this.widgetsContent.nativeElement.scrollLeft -= 150;
-
+    this.element.scrollRight +=50;
   }
+
+   private get element() {
+    return this.elementRef.nativeElement;
+   }
+
 }
