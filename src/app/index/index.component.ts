@@ -29,11 +29,11 @@ export class IndexComponent implements OnInit {
   }
 
   suivant() {
-    this.element.scrollRight +=50;
+    this.element.scrollRight +=2;
   }
 
-   private get element() {
+  private get element() {
     return this.elementRef.nativeElement;
-   }
+  }
 
 }
