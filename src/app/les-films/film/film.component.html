@@ -1,4 +1,7 @@
+<div class="flex-row space-bet">
 <p>ceci est la section film</p>
+<a  (click)="addFilm()"> <button class="edit">+ </button></a>
+</div>
 <div *ngIf="films" class="flex-row">
   <div *ngFor="let film of films">
     <!-- action click j'envoi sur la page du film (j'injecte donc mon objet a ma méthod) -->

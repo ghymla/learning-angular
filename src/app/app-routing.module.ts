@@ -8,8 +8,8 @@ import { PageNoFoundComponent } from './page-no-found/page-no-found.component';
 
 const routes: Routes = [
   {path: 'index', component: IndexComponent},
-  {path: 'login', component: LoginComponent},
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  // {path: 'login', component: LoginComponent},
+  {path: '', redirectTo: 'index', pathMatch: 'full'},
   {path: '**', component: PageNoFoundComponent}
 ];
 

@@ -12,6 +12,7 @@ import { FilmService } from '../film.service';
 })
 export class FilmComponent implements OnInit {
   films: Film [];
+  film: Film | undefined;
 
   constructor(
     private router: Router,
@@ -36,5 +37,9 @@ export class FilmComponent implements OnInit {
   goToFilm(film: Film) {
     // équivaut a taper l'url /show-film/:id
     this.router.navigate(["show-film", film.id])
+  }
+
+  addFilm() {
+    this.router.navigate(["create-film"])
   }
 }

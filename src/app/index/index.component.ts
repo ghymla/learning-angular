@@ -10,7 +10,7 @@ import { Manga } from '../les-mangas/mangas/manga';
 
 export class IndexComponent implements OnInit {
   mangas: Manga [];
-  selectManga: Manga|undefined;
+  selectManga: Manga | undefined;
 
 
   constructor(

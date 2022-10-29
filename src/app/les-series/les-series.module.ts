@@ -10,9 +10,9 @@ import { CreateSerieComponent } from './create-serie/create-serie.component';
 
 
 const serieRoute: Routes = [
-  {path: 'show-serie/:id', component: ShowSerieComponent, canActivate: [AuthGuard]},
-  {path: 'edit-serie/:id', component: EditSerieComponent, canActivate: [AuthGuard]},
-  {path: 'create-serie', component: CreateSerieComponent, canActivate: [AuthGuard]}
+  {path: 'show-serie/:id', component: ShowSerieComponent}, // canActivate: [AuthGuard]
+  {path: 'edit-serie/:id', component: EditSerieComponent}, // canActivate: [AuthGuard]
+  {path: 'create-serie', component: CreateSerieComponent} // canActivate: [AuthGuard]
 ]
 
 
